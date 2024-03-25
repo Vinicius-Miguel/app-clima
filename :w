@@ -1,6 +1,6 @@
 header {
   background-color: #84b7c9;
-  padding: 30px;
+  padding: 40px;
   margin: 0;
   position: relative;
 }
@@ -29,7 +29,7 @@ nav .menu-btn {
   margin: 650px 0px;
   cursor: pointer;
   transition: background-color 0.3s;
-  border-radius: 01px;
+  border-radius: 05px;
 }
 
 nav .menu-btn:hover {
