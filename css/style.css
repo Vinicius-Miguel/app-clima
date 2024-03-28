@@ -1,49 +1,92 @@
+/* Estilo do cabeçalho */
 header {
   background-color: #84b7c9;
-  padding: 30px;
-  margin: 0;
-  position: relative;
+  padding: 3% 12vw; /* Padding responsivo */
+  border-radius: 5px;
 }
-
 body {
-  background-color: #3B3B3B;
-  text-align: center;
+  background-color: #3e3e3e;
 }
 
+.search-bar {
+  background-color: #f2f2f2;
+  position: absolute;
+  top: 50px;
+  right: 3%;
+  width: 50%;
+  padding: 8px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+.search-bar::placeholder {
+  color: rgba(98, 100, 100, 0.8);
+}
+
+.search-button {
+  position: absolute;
+  right: 3%; /* Ajuste fino na posição */
+  top: 7.4%; /* Centraliza verticalmente */
+  transform: translateY(-50%);
+  background-color: #F2F2F2; /* Cor de fundo */
+  color: #B2B2B2; /* Cor do texto */
+  border: none;
+  padding: 10px 20px; /* Espaçamento interno */
+  cursor: pointer;
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: background-color 0.3s; /* Transição suave */
+  }
+
+.search-bar:focus {
+  outline: none;
+  border-color: #66afe9;
+  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.search-icon {
+  width: 20px;
+  height: 20px;
+  color: #666;
+}
+
+/* Estilo da barra de navegação */
 nav {
   display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  list-style: none;
-  text-decoration: none;
-  text-align: center;
+  justify-content: center;
+  position: relative; /* Alterado para relativo */
+  margin-top: 3vh; /* Distância do topo responsiva */
 }
 
+/* Estilo dos botões do menu */
 nav .menu-btn {
-  background-color: #ffffff;
-  color: #333333;
-  border: none;
-  padding: 5px 80px;
-  margin: 650px 0px;
+  flex: 1;
+  background-color: #f2f2f2;
+  color: #000000;
+  border-style: none;
+  padding: 0.5%; /* Padding responsivo */
+  margin: 0; /* Espaçamento entre os botões responsivo */
   cursor: pointer;
   transition: background-color 0.3s;
-  border-radius: 01px;
+  border-radius: 1px;
 }
 
+/* Estilo de hover dos botões do menu */
 nav .menu-btn:hover {
-  background-color: #cecece;
+  background-color: #cecece; /* Cor de fundo ao passar o mouse */
 }
 
+/* Estilo dos logotipos */
 .logos {
   position: absolute;
-  top: 10px;
-  left: 500px;
-
+  top: 1%;
+  left: 1%;
 }
 
+/* Estilo dos logotipos */
 .logo1, .logo2 {
-  width: 70px;
-  height: 70px;
+  width: 8%; /* Largura responsiva */
+  height: auto; /* Altura automática */
 }
