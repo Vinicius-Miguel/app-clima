@@ -14,7 +14,8 @@ body {
   top: 50px;
   right: 20%;
   width: 50%;
-  padding: 10px 20px;
+  height: 3%;
+  padding: 7px 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -28,8 +29,8 @@ body {
 
 .search-button {
   position: absolute;
-  right: 20%; /* Ajuste fino na posição */
-  top: 7.4%; /* Centraliza verticalmente */
+  right: 20.5%; /* Ajuste fino na posição */
+  top: 8%; /* Centraliza verticalmente */
   transform: translateY(-50%);
   background-color: #F2F2F2; /* Cor de fundo */
   color: #B2B2B2; /* Cor do texto */
@@ -62,7 +63,8 @@ nav {
 
 /* Estilo dos botões do menu */
 nav .menu-btn {
-  flex: auto;
+  height: 10%;
+  width: 15%;
   background-color: #f2f2f2;
   color: #000000;
   border-style: none;
