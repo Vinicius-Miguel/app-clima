@@ -1,94 +1,97 @@
-/* Estilo do cabeçalho */
 header {
+  position: relative;
   background-color: #84b7c9;
-  padding: 3% 12vw; /* Padding responsivo */
-  border-radius: 5px;
+  width: 100vw;
+  height: 5vw;
 }
-body {
-  background-color: #3e3e3e;
+
+/* logos */
+.logo2 {
+  top: 47%;
+  right: 21.5%;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+}
+
+.logo1 {
+  top: 0%;
+  left: 24.5%;
+  position: absolute;
+  width: 100px;
+  height: 80px;
+  transform: translate(-0%, -0%);
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
 }
 
 .search-bar {
-  background-color: #f2f2f2;
-  position: absolute;
-  top: 50px;
-  right: 20%;
-  width: 50%;
-  height: 3%;
-  padding: 7px 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-  text-align: left;
-}
-
-.search-bar::placeholder {
-  color: rgba(98, 100, 100, 0.8);
-}
-
-.search-button {
-  position: absolute;
-  right: 20.5%; /* Ajuste fino na posição */
-  top: 8%; /* Centraliza verticalmente */
-  transform: translateY(-50%);
-  background-color: #F2F2F2; /* Cor de fundo */
-  color: #B2B2B2; /* Cor do texto */
-  border: none;
-  padding: 8px 20px; /* Espaçamento interno */
-  cursor: pointer;
-  border-radius: 5px; /* Bordas arredondadas */
-  transition: background-color 0.3s; /* Transição suave */
-  }
-
-.search-bar:focus {
-  outline: none;
-  border-color: #66afe9;
-  box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
-}
-
-.search-icon {
-  width: 20px;
-  height: 20px;
-  color: #666;
-}
-
-/* Estilo da barra de navegação */
-nav {
-  display: flex;
-  justify-content: center;
-  position: relative; /* Alterado para relativo */
-  margin-top: 5vh; /* Distância do topo responsiva */
-}
-
-/* Estilo dos botões do menu */
-nav .menu-btn {
-  height: 10%;
-  width: 15%;
-  background-color: #f2f2f2;
-  color: #000000;
+  width: 40vw;
+  height: 1.5vw;
+  border-radius: 10px;
+  margin-top: 35px;
   border-style: none;
-  padding: 0.5%; /* Padding responsivo */
-  margin: 0; /* Espaçamento entre os botões responsivo */
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 1px;
+  text-decoration: none;
+  text-align: center;
 }
 
-/* Estilo de hover dos botões do menu */
-nav .menu-btn:hover {
-  background-color: #cecece; /* Cor de fundo ao passar o mouse */
+body {
+  position: relative;
+  margin: 0;
+  background-color: #1d1f20;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Estilo dos logotipos */
-.logos {
-  position: absolute;
-  top: 1%;
-  left: 1%;
+nav {
+  text-align: center;
+  margin-top: 2%;
 }
 
-/* Estilo dos logotipos */
-.logo1, .logo2 {
-  width: 10%; /* Largura responsiva */
-  height: auto; /* Altura automática */
+.menu-btn {
+  width: 12vw;
+  height: 1.5vw;
+  margin: -6px;
+  border-radius: 5px;
+  border-style: none;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #313334;
+  text-align: center;
+  align-content: center;
+  width: 50vw;
+  height: 35vw;
+  margin-top: 25%;
+  border-radius: 10px;
+  padding-bottom: 100px;
+}
+
+.main-content {
+  color: white;
+
+}
+
+footer {
+  margin-top: 20px;
+  background-color: red;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 80px;
+  background-color: #313334;
+}
+
+.footer-info {
+  text-align: center;
+  color: white;
 }
