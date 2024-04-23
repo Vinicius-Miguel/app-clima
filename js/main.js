@@ -6,9 +6,9 @@ navigator.geolocation.getCurrentPosition(position => {
 
 function insertInHtml(json) {
   document.getElementById("name-city").innerHTML = json.results.city;
-  document.getElementById("graus").innerHTML = json.results.temp;
+  document.getElementById("graus").innerHTML = json.results.temp + " °C";
   document.getElementById("description").innerHTML = json.results.description;
-  document.getElementById("humidity").innerHTML = json.results.humidity;
+  document.getElementById("humidity").innerHTML = json.results.humidity + "%";
   document.getElementById("wind").innerHTML = json.results.wind_speedy;
   document.getElementById("day-0").innerHTML = json.results.forecast[0].weekday;
 }
@@ -19,9 +19,22 @@ function searchClimate(latitude, longitude) {
     .then(res => res.json())
     .then(json => {
       console.log(json.results);
-      insertInHtml(json); // Chame a função para atualizar o HTML com os dados obtidos
+      insertInHtml(json);
     })
     .catch(err => console.log("Erro ao buscar dados: ", err));
 }
 
+function buscarPrevisão() {
+  const city = document.getElementById("city-input").value.replace(/ /g, "-");
+  const state = ""; // O estado não é fornecido pelo usuário no seu HTML, então está vazio aqui
+
+  searchClimate(city.toLowerCase(), state.toUpperCase());
+}
+
+// Remova o atributo wm-submit do seu botão de busca
+const submit = document.querySelector(".search-btn");
+submit.onclick = function(e) {
+  e.preventDefault();
+  buscarPrevisão();
+}
 
