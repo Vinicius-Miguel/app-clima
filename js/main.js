@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const apiKey = "9a8f50a0"; // Substitua "SUA_CHAVE_DE_API_AQUI" pela sua chave de API do HGBrasil
   const searchBtn = document.querySelector(".search-btn");
   const cityInput = document.getElementById("city-input");
   const mainContent = document.querySelector(".main-content");
@@ -7,21 +6,19 @@ document.addEventListener("DOMContentLoaded", function() {
   searchBtn.addEventListener("click", function() {
     const city = cityInput.value.trim();
     if (city !== "") {
-      fetch(`https://api.hgbrasil.com/weather?key=${apiKey}&city_name=${encodeURIComponent(city)}`)
+      fetch(`/.netlify/functions/weather?city=${encodeURIComponent(city)}`)
         .then(response => response.json())
         .then(data => {
-          if (data && data.results) {
+          if (data && !data.error) {
             const weatherInfo = data.results;
-            // Aqui você pode manipular os dados de acordo com o que deseja exibir no seu site
-            // Por exemplo, você pode mostrar a temperatura, a descrição do clima, etc.
             const weatherHTML = `
-                            <h2>Previsão do tempo para ${weatherInfo.city_name}</h2>
-                            <p>Temperatura: ${weatherInfo.temp}°C</p>
-                            <p>Condição: ${weatherInfo.description}</p>
-                            <p>Umidade: ${weatherInfo.humidity}%</p>
-                            <p>Vento: ${weatherInfo.wind_speed} km/h</p>
-                            <!-- Adicione mais informações conforme necessário -->
-                        `;
+              <h2>Previsão do tempo para ${weatherInfo.city_name}</h2>
+              <p>Temperatura: ${weatherInfo.temp}°C</p>
+              <p>Condição: ${weatherInfo.description}</p>
+              <p>Umidade: ${weatherInfo.humidity}%</p>
+              <p>Vento: ${weatherInfo.wind_speed} km/h</p>
+              <!-- Adicione mais informações conforme necessário -->
+            `;
             mainContent.innerHTML = weatherHTML;
           } else {
             mainContent.innerHTML = "<p>Não foi possível obter informações para esta cidade.</p>";
@@ -36,3 +33,5 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
