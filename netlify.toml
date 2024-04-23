@@ -2,5 +2,4 @@
   from = "/.netlify/functions/weather"
   to = "/.netlify/functions/weather"
   status = 200
-  force = true
 
