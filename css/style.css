@@ -61,7 +61,6 @@ header {
   border-radius: 20px;
   cursor: pointer;
   padding: 10px;
-  transition: background-color 0.5s; /* Aumenta a duração da transição */
 }
 
 .search-btn i {
@@ -124,12 +123,7 @@ footer {
   .menu-btn {
     width: 30%;
   }
-
-  .search-btn:hover {
-    background-color: #405c67;
-  }
-}
-
+ 
 @media (max-width: 480px) {
   .search-bar {
     width: 100%;
