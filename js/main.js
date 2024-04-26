@@ -25,11 +25,29 @@ function searchClimate(latitude, longitude) {
 }
 
 function buscarPrevisão() {
-  const city = document.getElementById("city-input").value.replace(/ /g, "-");
+  const city = document.getElementById("city-input").value;
   const state = ""; // O estado não é fornecido pelo usuário no seu HTML, então está vazio aqui
+  const apiKey = "9a8f50a0"; // Substitua "SUA-CHAVE" pela sua chave da API
 
-  searchClimate(city.toLowerCase(), state.toUpperCase());
+  const apiUrl = `https://api.hgbrasil.com/weather?key=${apiKey}&city_name=${city},${state}`;
+
+  fetch(proxyUrl + apiUrl)
+    .then(res => res.json())
+    .then(json => {
+      console.log(json.results);
+      insertInHtml(json);
+    })
+    .catch(err => console.log("Erro ao buscar dados: ", err));
 }
+
+function handleSearch(event) {
+  if (event.key === "Enter") {
+    buscarPrevisão();
+  }
+}
+
+// Adiciona o evento de pesquisa ao pressionar "Enter"
+document.getElementById("city-input").addEventListener("keypress", handleSearch);
 
 // Remova o atributo wm-submit do seu botão de busca
 const submit = document.querySelector(".search-btn");
@@ -37,4 +55,5 @@ submit.onclick = function(e) {
   e.preventDefault();
   buscarPrevisão();
 }
+
 
