@@ -100,5 +100,12 @@ submit.onclick = function(e) {
   buscarPrevisão();
 }
 
+const searchBar = document.getElementById("city-input");
+
+searchBar.addEventListener("input", function() {
+  this.style.fontSize = "16px"; // Tamanho da fonte ao digitar
+});
+
+
 
 
