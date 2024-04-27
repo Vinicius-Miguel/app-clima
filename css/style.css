@@ -105,15 +105,16 @@ main {
 
 footer {
   background-color: #313334;
-  height: 50px; /* Defina a altura desejada para o footer aqui */
+  height: 46px; /* Defina a altura desejada para o footer aqui */
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  color: white;
 }
 
 .footer-section {
