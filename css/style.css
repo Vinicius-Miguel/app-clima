@@ -23,37 +23,34 @@ header {
 .logo1 {
   max-width: 60px;
   height: auto;
-  margin-right: 10px; /* Ajuste a margem direita para alinhar o logo 1 */
+  margin-right: 10px; 
 }
 
 .logo2 {
   max-width: 60px;
   height: auto;
-  margin-left: 10px; /* Ajuste a margem esquerda para alinhar o logo 2 */
+  margin-left: 10px; 
 }
 
 .search-wrapper {
   position: relative;
   flex: 1;
   display: flex;
-  align-items: center; /* Centraliza verticalmente o ícone de pesquisa */
-}
+  align-items: center; }
 
 .search-bar {
   flex: 1;
-  min-width: 0; /* Permite que a barra de pesquisa diminua além de seu conteúdo */
-  height: 40px;
+  min-width: 0;   height: 40px;
   border-radius: 20px;
   border: none;
-  padding: 0 40px 0 10px; /* Ajusta o padding para acomodar o ícone de pesquisa */
-  background-color: #ffffff;
+  padding: 0 40px 0 10px;   background-color: #ffffff;
   color: black;
-  text-align: center; /* Centraliza o texto */
+  text-align: center;
 }
 
 .search-btn {
   position: absolute;
-  right: 10px; /* Posiciona o botão de pesquisa à direita */
+  right: 10px; 
   top: 30%;
   transform: translateY(-50%);
   background-color: #fff;
@@ -80,14 +77,14 @@ nav {
   justify-content: center;
   align-items: center;
   margin-top: 90px;
-  gap: 0; /* Remova completamente o espaçamento entre os botões */
+  gap: 0; 
 }
 
 .menu-btn {
   border-radius: 5px;
   border: none;
-  background-color: #f2f2f2; /* Defina a mesma cor de fundo da barra de pesquisa */
-  color: black; /* Altere a cor do texto para preto */
+  background-color: #f2f2f2; 
+  color: black; 
   cursor: pointer;
   height: 33px;
   margin: -5px;
@@ -95,24 +92,56 @@ nav {
 }
 
 main {
-  margin: 20px auto; /* Margem para centralizar o elemento */
-  max-width: 800px; /* Largura máxima do conteúdo principal */
-  padding: 20px; /* Espaçamento interno */
-  background-color: #313334; /* Cor de fundo */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin: 50px auto; 
+  max-width: 800px; 
+  padding: 20px;
+  background-color: #313334; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  height: 100vh;
+  height: 50vh;
   color: white;
   text-align: center;
 }
 
 footer {
-  margin-top: 5vh;
   background-color: #313334;
-  color: white;
-  text-align: center;
-  padding: 20px;
-} 
+  height: 50px; /* Defina a altura desejada para o footer aqui */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  max-width: 200px;
+}
+
+.footer-section h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 @media (max-width: 480px) {
   .search-bar {
     width: 100%;

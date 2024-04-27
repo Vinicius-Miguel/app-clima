@@ -15,20 +15,20 @@
     <div class="search-container">
       <img class="logo1" src="img/logo1.png" alt="">
       <div class="search-wrapper">
-        <input type="text" class="search-bar" id="city-input" placeholder="Pesquise sua cidade aqui"
-          onkeypress="handleSearch(event)">
+        <input type="text" class="search-bar" id="city-input" placeholder="Pesquise sua cidade aqui" onkeypress="handleSearch(event)">
         <button onclick="buscarPrevisão()" class="search-btn" aria-label="Buscar Previsão do Tempo">
           <i class="fas fa-search"></i>
+        </button>
       </div>
       <img class="logo2" src="img/logo2.png" alt="sol e nuvens">
     </div>
   </header>
 
   <nav>
-    <button class="menu-btn">Agora</button>
-    <button class="menu-btn">Hoje</button>
-    <button class="menu-btn">Fim de semana</button>
-    <button class="menu-btn">15 dias</button>
+    <button id="agora-btn" class="menu-btn">Agora</button>
+    <button id="hoje-btn" class="menu-btn">Hoje</button>
+    <button id="fim-de-semana-btn" class="menu-btn">Fim de semana</button>
+    <button id="15-dias-btn" class="menu-btn">15 dias</button>
   </nav>
 
   <main>
@@ -41,18 +41,39 @@
       <p id="day-0">Hoje</p>
     </div>
   </main>
-  <script src="js/main.js"></script>
-</body>
 
 <footer>
-  <div class="footer-info">
-    <p>Contato
-Anuncie
-Fale conosco
-Política de privacidade
-FAQ
-API de previsão de tempo</p>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h2>Contato</h2>
+      <ul>
+        <li>E-mail: contato@seusite.com</li>
+        <li>Telefone: (XX) XXXX-XXXX</li>
+        <li>Endereço: Rua Exemplo, 123 - Cidade</li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h2>Anuncie</h2>
+      <p>Entre em contato para saber sobre nossas opções de publicidade e parcerias.</p>
+    </div>
+    <div class="footer-section">
+      <h2>Política de Privacidade</h2>
+      <p>Leia nossa política de privacidade para entender como protegemos suas informações.</p>
+    </div>
+    <div class="footer-section">
+      <h2>FAQ</h2>
+      <p>Confira nossa seção de perguntas frequentes para encontrar respostas rápidas.</p>
+    </div>
+    <div class="footer-section">
+      <h2>API de Previsão de Tempo</h2>
+      <p>Utilize nossa API de previsão de tempo para integrar informações meteorológicas ao seu projeto.</p>
+    </div>
   </div>
 </footer>
+ 
+  <script src="js/main.js"></script>
+
+</body>
 
 </html>
+
