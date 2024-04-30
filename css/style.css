@@ -1,6 +1,6 @@
 header {
   position: relative;
-  background-color: #84b7c9;
+  background-color: #385378;
   width: 100%;
   min-height: 100px;
   display: flex;
@@ -21,7 +21,7 @@ header {
 }
 
 .logo1 {
-  max-width: 70px;
+  max-width: 100px;
   height: auto;
   margin-right: 10px; 
 }
@@ -101,10 +101,10 @@ main {
   margin: 50px auto; 
   max-width: 500px; 
   background-color: #313334; 
-  border-radius: 10px;
+  border-radius: 5px;
   height: auto; 
   color: white;
-  margin-bottom: 200px;
+  margin-bottom: 400px;
   padding: 10px; 
 }
 
@@ -125,7 +125,8 @@ main {
 
 #name-city {
   font-weight: bold;
-  color: #f0f0f0;
+  color: #007bff; 
+;
 }
 
 #graus {
