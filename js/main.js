@@ -1,111 +1,104 @@
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+document.addEventListener("DOMContentLoaded", function() {
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const cityInput = document.getElementById('city-input');
 
-navigator.geolocation.getCurrentPosition(position => {
-  searchClimate(position.coords.latitude, position.coords.longitude);
-});
+  navigator.geolocation.getCurrentPosition(successCallback, errorCallback, { enableHighAccuracy: true });
 
-function insertInHtml(json) {
-  const city = "Cidade: " + json.results.city;
-  const temp = "Temperatura: " + json.results.temp + " °C";
-  const description = "Descrição do Tempo: " + json.results.description;
-  const humidity = "Humidade: " + json.results.humidity + "%";
-  const wind = "Vento: " + json.results.wind_speedy + " km/h";
-  const todayTemp = "Hoje: " + json.results.forecast[0].min + "° - " + json.results.forecast[0].max + "°";
-
-  // Atualize os campos fixos com os valores correspondentes
-  document.getElementById("name-city").innerHTML = city;
-
-  // Adicione as informações pesquisadas na frente dos campos fixos
-  document.getElementById("graus").innerHTML = temp;
-  document.getElementById("description").innerHTML = description;
-  document.getElementById("humidity").innerHTML = humidity;
-  document.getElementById("wind").innerHTML = wind;
-  document.getElementById("day-0").innerHTML = todayTemp;
-}
-
-function searchClimate(latitude, longitude) {
-  const baseUrl = `https://api.hgbrasil.com/weather?key=9a8f50a0&lat=${latitude}&lon=${longitude}&user_ip=remote`;
-  fetch(proxyUrl + baseUrl)
-    .then(res => res.json())
-    .then(json => {
-      console.log(json.results);
-      insertInHtml(json);
-    })
-    .catch(err => console.log("Erro ao buscar dados: ", err));
-}
-
-function buscarPrevisão(type = "agora") {
-  const city = document.getElementById("city-input").value;
-  const state = "";
-  const apiKey = "9a8f50a0"; 
-  let apiUrl;
-
-  switch (type) {
-    case "agora":
-      apiUrl =  `https://api.hgbrasil.com/weather?key=${apiKey}&city_name=${city},${state}`;
-      break;
-    case "hoje":
-      // Lógica para buscar previsão do dia atual
-      apiUrl =  `https://api.hgbrasil.com/weather?key=${apiKey}&city_name=${city},${state}&forecast_only=true`;
-      break;
-    case "fim-de-semana":
-      // Lógica para buscar previsão do fim de semana
-      apiUrl =  `https://api.hgbrasil.com/weather?key=${apiKey}&city_name=${city},${state}&filter=weekend`;
-      break;
-    case "15-dias":
-      // Lógica para buscar previsão dos próximos 15 dias
-      apiUrl =  `https://api.hgbrasil.com/weather?key=${apiKey}&city_name=${city},${state}&forecast_days=15`;
-      break;
-    default:
-      console.log("Tipo de previsão não reconhecido");
-      return;
+  function successCallback(position) {
+    searchClimate(position.coords.latitude, position.coords.longitude);
   }
 
-  fetch(proxyUrl + apiUrl)
-    .then(res => res.json())
-    .then(json => {
-      console.log(json.results);
-      insertInHtml(json);
-    })
-    .catch(err => console.log("Erro ao buscar dados: ", err));
-}
-
-function handleSearch(event) {
-  if (event.key === "Enter") {
-    buscarPrevisão("agora");
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      searchClimateByCity(); // Chame a função para pesquisar o clima por cidade
+    }
   }
-}
 
-document.getElementById("city-input").addEventListener("keypress", handleSearch);
+  // Adicione um ouvinte de evento para o evento de tecla pressionada no campo de entrada
+  cityInput.addEventListener('keypress', handleKeyPress);
 
-document.getElementById("agora-btn").addEventListener("click", function() {
-  buscarPrevisão("agora");
+  function errorCallback(error) {
+    console.log(error);
+  }
+
+  function insertInHtml(json) {
+    const city = "Cidade: " + json.results.city;
+    const temp = "Temperatura: " + json.results.temp + " °C";
+    const description = "Descrição do Tempo: " + json.results.description;
+    const humidity = "Humidade: " + json.results.humidity + "%";
+    const wind = "Vento: " + json.results.wind_speedy + " km/h";
+    const todayTemp = "Hoje: " + json.results.forecast[0].min + "° - " + json.results.forecast[0].max + "°";
+
+    // Atualize os campos fixos com os valores correspondentes
+    document.getElementById("name-city").innerHTML = city;
+    document.getElementById("graus").innerHTML = temp;
+    document.getElementById("description").innerHTML = description;
+    document.getElementById("humidity").innerHTML = humidity;
+    document.getElementById("wind").innerHTML = wind;
+    document.getElementById("day-0").innerHTML = todayTemp;
+
+    // Exibe o ícone correspondente à condição climática
+    const weatherIcon = document.getElementById("weather-icon");
+    const iconUrl = getWeatherIconUrl(json.results.condition_slug);
+    weatherIcon.src = iconUrl;
+  }
+
+  function searchClimate(latitude, longitude) {
+    const baseUrl = `https://api.hgbrasil.com/weather?key=9a8f50a0&user_ip=remote&lat=${latitude}&lon=${longitude}`;
+    fetch(proxyUrl + baseUrl)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json.results);
+        insertInHtml(json);
+      })
+      .catch(err => console.log("Erro ao buscar dados: ", err));
+  }
+
+  // Função para pesquisar o clima por cidade
+  function searchClimateByCity() {
+    const cityName = cityInput.value.trim(); // Obtém o valor da cidade e remove espaços em branco extras
+
+    if (cityName !== '') {
+      const baseUrl = `https://api.hgbrasil.com/weather?key=9a8f50a0&city_name=${cityName}`;
+      fetch(proxyUrl + baseUrl)
+        .then(res => res.json())
+        .then(json => {
+          console.log(json.results);
+          insertInHtml(json);
+        })
+        .catch(err => console.log("Erro ao buscar dados: ", err));
+    } else {
+      console.log("Por favor, insira um nome de cidade válido.");
+    }
+  }
+
+  function getWeatherIconUrl(conditionSlug) {
+    const iconBaseUrl = 'https://assets.hgbrasil.com/weather/icons/conditions/';
+    const iconExtension = '.svg';
+
+    // Mapeia as condições climáticas para os URLs dos ícones correspondentes
+    const iconMap = {
+      storm: 'storm',
+      snow: 'snow',
+      hail: 'hail',
+      rain: 'rain',
+      fog: 'fog',
+      clear_day: 'clear_day',
+      clear_night: 'clear_night',
+      cloud: 'cloud',
+      cloudly_day: 'cloudly_day',
+      cloudly_night: 'cloudly_night',
+      none_day: 'none_day',
+      none_night: 'none_night'
+      // Adicione mais condições climáticas conforme necessário
+    };
+
+    // Verifica se a condição climática está mapeada e retorna o URL do ícone correspondente
+    if (iconMap.hasOwnProperty(conditionSlug)) {
+      return iconBaseUrl + iconMap[conditionSlug] + iconExtension;
+    } else {
+      return ''; // Retorna uma string vazia se a condição não estiver mapeada
+    }
+  }
 });
-
-document.getElementById("hoje-btn").addEventListener("click", function() {
-  buscarPrevisão("hoje");
-});
-
-document.getElementById("fim-de-semana-btn").addEventListener("click", function() {
-  buscarPrevisão("fim-de-semana");
-});
-
-document.getElementById("15-dias-btn").addEventListener("click", function() {
-  buscarPrevisão("15-dias");
-});
-
-const submit = document.querySelector(".search-btn");
-submit.onclick = function(e) {
-  e.preventDefault();
-  buscarPrevisão();
-}
-
-const searchBar = document.getElementById("city-input");
-
-searchBar.addEventListener("input", function() {
-  this.style.fontSize = "16px"; // Tamanho da fonte ao digitar
-});
-
-
-
 
