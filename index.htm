@@ -15,7 +15,7 @@
     <div class="search-container">
       <img class="logo1" src="img/logo1.png" alt="">
       <div class="search-wrapper">
-        <input type="text" class="search-bar" id="city-input" placeholder="Pesquise sua cidade aqui" onkeypress="handleSearch(event)">
+        <input type="text" class="search-bar" id="city-input" placeholder="Pesquise sua cidade aqui">
         <button onclick="buscarPrevisão()" class="search-btn" aria-label="Buscar Previsão do Tempo">
           <i class="fas fa-search"></i>
         </button>
@@ -35,6 +35,7 @@
     <div class="main-content">
       <p id="name-city">Nome da Cidade</p>
       <p id="graus">Temperatura</p>
+      <img id="weather-icon" src="" alt="Ícone do Clima">
       <p id="description">Descrição</p>
       <p id="humidity">Humidade</p>
       <p id="wind">Vento</p>
@@ -42,24 +43,23 @@
     </div>
   </main>
 
-<footer>
-  <div class="footer-container">
-    <div class="footer-section">
-      <h3>Contato</h3>
-      <ul>
-        <li style="white-space: nowrap;">Email: vinicius.de.o.miguel@gmail.com</li>
-      </ul>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Contato</h3>
+        <ul>
+          <li style="white-space: nowrap;">Email: vinicius.de.o.miguel@gmail.com</li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Anuncie</h3>
+        <p>Entre em contato para saber sobre nossas opções de publicidade e parcerias.</p>
+      </div>
     </div>
-    <div class="footer-section">
-      <h3>Anuncie</h3>
-      <p>Entre em contato para saber sobre nossas opções de publicidade e parcerias.</p>
-    </div>
-  </div>
-</footer>
- 
+  </footer>
+
   <script src="js/main.js"></script>
 
 </body>
 
 </html>
-
