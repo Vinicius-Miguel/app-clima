@@ -202,16 +202,15 @@ main {
 
 @media screen and (max-width: 768px) {
   .search-btn {
-    background-color: #fff; /* Defina a cor de fundo desejada */
+    background-color: #fff; 
   }
 
   .search-btn i {
-    color: #999; /* Defina a cor do ícone desejada */
+    color: #999; 
   }
 
   .menu-btn {
-    background-color: #f2f2f2; /* Defina a cor de fundo desejada */
-    color: black; /* Defina a cor do texto desejada */
+    background-color: #f2f2f2; 
   }
 }
 
