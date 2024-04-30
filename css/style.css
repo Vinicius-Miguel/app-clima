@@ -46,11 +46,10 @@ header {
   border-radius: 10px;
   border: none;
   padding: 0 40px 0 10px;
-  background-color: #ffffff !important; /* Forçando a cor de fundo branca */
+  background-color: #ffffff; 
   color: black;
   text-align: center;
-  font-size: 14px; /* Tamanho da fonte ajustado */
-}
+  font-size: 14px; }
 
 .search-btn {
   position: absolute;
@@ -88,7 +87,7 @@ nav {
 .menu-btn {
   border-radius: 5px;
   border: none;
-  background-color: #f2f2f2 !important; 
+  background-color: #f2f2f2; 
   color: black;
   font-weight: bold;
   cursor: pointer;
@@ -201,10 +200,20 @@ main {
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .search-bar {
-    width: 100%;
-    max-width: 100%;
+    background-color: #ffffff; 
+    color: black; 
+  }
+
+  .search-btn {
+    background-color: #ffffff; 
+    color: #000000;
+  }
+
+  .menu-btn {
+    background-color: #ffffff; 
+    color: #000000;
   }
 }
 
