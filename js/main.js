@@ -14,7 +14,26 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // Adicione um ouvinte de evento para o evento de tecla pressionada no campo de entrada
+  function buscarPrevisão() {
+    const cityName = document.getElementById('city-input').value.trim(); // Obtém o valor da cidade e remove espaços em branco extras
+
+    if (cityName !== '') {
+      const baseUrl = `https://api.hgbrasil.com/weather?key=9a8f50a0&city_name=${cityName}`;
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+      fetch(proxyUrl + baseUrl)
+        .then(res => res.json())
+        .then(json => {
+          console.log(json.results);
+          insertInHtml(json);
+        })
+        .catch(err => console.log("Erro ao buscar dados: ", err));
+    } else {
+      console.log("Por favor, insira um nome de cidade válido.");
+    }
+  }
+
+
   cityInput.addEventListener('keypress', handleKeyPress);
 
   function errorCallback(error) {

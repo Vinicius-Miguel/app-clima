@@ -13,15 +13,17 @@
 <body>
 
   <header>
-    <div class="search-container">
-      <img class="logo1" src="img/logo1.png" alt="">
-      <div class="search-wrapper">
-        <input type="text" class="search-bar" id="city-input" placeholder="Pesquise sua cidade aqui">
-        <button onclick="buscarPrevisão()" class="search-btn" aria-label="Buscar Previsão do Tempo">
-          <i class="fas fa-search"></i>
-        </button>
+    <div class="header-content"> <!-- Adição da classe header-content -->
+      <div class="search-container">
+        <img class="logo1" src="img/logo1.png" alt="">
+        <div class="search-wrapper">
+          <input type="text" class="search-bar" id="city-input" placeholder="Pesquise sua cidade aqui">
+          <button onclick="buscarPrevisão()" class="search-btn" aria-label="Buscar Previsão do Tempo">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <img class="logo2" src="img/logo2.png" alt="sol e nuvens">
       </div>
-      <img class="logo2" src="img/logo2.png" alt="sol e nuvens">
     </div>
   </header>
 
@@ -62,5 +64,3 @@
   <script src="js/main.js"></script>
 
 </body>
-
-</html>
