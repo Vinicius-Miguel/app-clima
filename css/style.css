@@ -1,14 +1,20 @@
 header {
-  position: relative;
-  background-color: #385378;
   width: 100%;
   min-height: 100px;
   display: flex;
   justify-content: center;
-  align-items: stretch;
+  background-color: #385378;
+}
+
+.header-content {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
 }
 
 .search-container {
+  width: 100%;
   display: flex;
   align-items: center;
   width: 90%;
@@ -21,14 +27,14 @@ header {
 }
 
 .logo1 {
-  max-width: 100px;
-  height: auto;
-  margin-right: 10px; 
+  max-width: 80px;
+  max-height: 80px;
+   margin-right: 10px; 
 }
 
 .logo2 {
-  max-width: 70px;
-  height: auto;
+  max-width: 45px;
+max-height: 45px;
   margin-left: 10px; 
 }
 
@@ -36,7 +42,6 @@ header {
   position: relative;
   flex: 1;
   display: flex;
-  align-items: center; 
 }
 
 .search-bar {
@@ -71,6 +76,8 @@ header {
 
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
   background-color: #1d1f20;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
@@ -98,7 +105,7 @@ nav {
 
 main {
   margin: 50px auto; 
-  max-width: 500px; 
+  max-width: auto; 
   background-color: #313334; 
   border-radius: 5px;
   height: auto; 
@@ -124,7 +131,7 @@ main {
 
 #name-city {
   font-weight: bold;
-  color: #007bff; 
+  color: #ffff; 
 ;
 }
 
@@ -187,40 +194,204 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    margin-right: 0;
-    margin-bottom: 30px;
-    max-width: none;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  header {
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    align-items: center; 
-    min-height: auto;   
-    padding: 10px;
-  }
-
-  .logo1, .logo2 {
-    max-width: 40%;
-  }
-
-  .menu-btn {
-    max-width: 40%; 
-    flex-basis: 40%;
+  .menu-btn, .search-container {
+    flex-basis: auto; 
+    max-width: none; 
   }
 
   .search-container {
-    flex-basis: 100%; 
-    margin-top: 10px; 
+    margin-top: 10px;
+    flex-basis: 50%; 
+    max-width: 50%; 
+  }
+
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+  }
+
+  .search-bar {
+    flex: 1;
+    min-width: 0;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 30px 0 10px;
+    background-color: #ffffff;
+    color: black;
+    font-size: 14px;
+    margin-right: 10px; 
+  }
+
+  .search-btn {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 10px;
+    width: 40px;
+    margin-right: 7px;
+  }
+
+  .search-btn i {
+    color: #999;
+    font-size: 15px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  header {
+    padding: 5px;
+    text-align: center;
+    margin-left: auto; /* Centraliza o cabeçalho horizontalmente */
+    margin-right: auto; /* Centraliza o cabeçalho horizontalmente */
+  }
+
+  .logo1, .logo2 {
+    max-width: 20%;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-bar {
+    flex: 1;
+    min-width: 0;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 30px 0 10px;
+    background-color: #ffffff;
+    color: black;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .search-btn {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 10px;
+    width: 40px;
+  }
+
+  .search-btn i {
+    color: #999;
+    font-size: 15px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajuste a margem superior */
+    gap: -5px; /* Ajuste o espaçamento entre os botões */
+  }
+
+  .menu-btn {
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    height: 38px;
+    width: 90px; /* Ajuste a largura dos botões do menu */
+  }
+
+  @media screen and (max-width: 428px) {
+
+        header {
+    padding: 5px;
+    text-align: center;
+    margin-left: auto; /* Centraliza o cabeçalho horizontalmente */
+    margin-right: auto; /* Centraliza o cabeçalho horizontalmente */
+  }
+
+    .logo1, .logo2 {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start; /* Ajuste para iniciar a partir do início do cabeçalho */
+  }
+
+  .search-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centralize o conteúdo horizontalmente */
+  }
+
+  .search-bar {
+    flex: 1;
+    min-width: 0;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 30px 0 10px;
+    background-color: #ffffff;
+    color: black;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .search-btn {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centralize o ícone horizontalmente */
+  }
+
+  .search-btn i {
+    color: #999;
+    font-size: 15px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: -5px;
+  }
+
+  .menu-btn {
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    height: 38px;
+    width: 90px;
+  }
+}
+
 
