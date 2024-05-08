@@ -1,23 +1,24 @@
 header {
-  width: 100%;
+  width: auto;
   min-height: 100px;
   display: flex;
   justify-content: center;
   background-color: #385378;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .header-content {
-  width: 100%;
   max-width: 800px;
   display: flex;
   align-items: center;
 }
 
 .search-container {
-  width: 100%;
   display: flex;
   align-items: center;
-  width: 90%;
+  justify-content: center;
+  width: auto;
   max-width: 800px;
 }
 
@@ -27,14 +28,14 @@ header {
 }
 
 .logo1 {
-  max-width: 80px;
-  max-height: 80px;
-   margin-right: 10px; 
+  max-width: 100px;
+  height: auto;
+  margin-right: 10px; 
 }
 
 .logo2 {
-  max-width: 45px;
-max-height: 45px;
+  max-width: 70px;
+  height: auto;
   margin-left: 10px; 
 }
 
@@ -46,8 +47,8 @@ max-height: 45px;
 
 .search-bar {
   flex: 1;
-  min-width: 0;
   height: 35px;
+  width: 400px;
   border-radius: 10px;
   border: none;
   padding: 0 40px 0 10px;
@@ -100,14 +101,14 @@ nav {
   cursor: pointer;
   height: 33px;
   margin: -5px;
-  width: 150px;
+  width: 120px;
 }
 
 main {
   margin: 50px auto; 
-  max-width: auto; 
+  max-width: 400px; 
   background-color: #313334; 
-  border-radius: 5px;
+  border-radius: 30px;
   height: auto; 
   color: white;
   margin-bottom: 400px;
@@ -238,92 +239,14 @@ main {
   .search-btn i {
     color: #999;
     font-size: 15px;
-  }
+ }
 }
+ @media screen and (max-width: 428px) {
 
-@media screen and (max-width: 375px) {
-  header {
-    padding: 5px;
+    header {
     text-align: center;
-    margin-left: auto; /* Centraliza o cabeçalho horizontalmente */
-    margin-right: auto; /* Centraliza o cabeçalho horizontalmente */
-  }
-
-  .logo1, .logo2 {
-    max-width: 20%;
-    margin: 0 auto;
-  }
-
-  .search-container {
-    flex-basis: 100%;
-    max-width: 100%;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-
-  .search-wrapper {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .search-bar {
-    flex: 1;
-    min-width: 0;
-    height: 35px;
-    border-radius: 10px;
-    border: none;
-    padding: 0 30px 0 10px;
-    background-color: #ffffff;
-    color: black;
-    font-size: 14px;
-    margin-right: 10px;
-  }
-
-  .search-btn {
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px;
-    margin-top: 10px;
-    width: 40px;
-  }
-
-  .search-btn i {
-    color: #999;
-    font-size: 15px;
-  }
-
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Ajuste a margem superior */
-    gap: -5px; /* Ajuste o espaçamento entre os botões */
-  }
-
-  .menu-btn {
-    border-radius: 5px;
-    border: none;
-    background-color: #f2f2f2;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    height: 38px;
-    width: 90px; /* Ajuste a largura dos botões do menu */
-  }
-
-  @media screen and (max-width: 428px) {
-
-        header {
-    padding: 5px;
-    text-align: center;
-    margin-left: auto; /* Centraliza o cabeçalho horizontalmente */
-    margin-right: auto; /* Centraliza o cabeçalho horizontalmente */
   }
 
     .logo1, .logo2 {
@@ -333,20 +256,12 @@ main {
 
   .search-container {
     margin-top: 10px;
-    display: flex;
-    justify-content: flex-start; /* Ajuste para iniciar a partir do início do cabeçalho */
-  }
-
-  .search-wrapper {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centralize o conteúdo horizontalmente */
+    margin-left: 100px;
   }
 
   .search-bar {
     flex: 1;
-    min-width: 0;
+    max-width: 200px;
     height: 35px;
     border-radius: 10px;
     border: none;
@@ -354,7 +269,6 @@ main {
     background-color: #ffffff;
     color: black;
     font-size: 14px;
-    margin-right: 10px;
   }
 
   .search-btn {
@@ -392,6 +306,81 @@ main {
     height: 38px;
     width: 90px;
   }
-}
+
+@media screen and (max-width: 375px) {
+  header {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo1, .logo2 {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .search-container {
+    flex-basis: 100%;
+    max-width: 40%;
+    margin-top: 10px;
+    display: flex;
+    margin-left: 110px;
+  }
+
+  .search-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search-bar {
+    flex: 1;
+    max-width: 170px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 30px 0 10px;
+    background-color: #ffffff;
+    color: black;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .search-btn {
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 10px;
+    width: 40px;
+  }
+
+  .search-btn i {
+    color: #999;
+    font-size: 15px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Ajuste a margem superior */
+    gap: -5px; /* Ajuste o espaçamento entre os botões */
+  }
+
+  .menu-btn {
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    height: 38px;
+    width: 90px; /* Ajuste a largura dos botões do menu */
+  }
+
+ }
 
 
